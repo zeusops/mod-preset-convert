@@ -15,6 +15,6 @@ input=$1
 output=${2:-output.txt}
 
 tempfile=$(mktemp)
-sed 's/Steam//' $input | sed 's/  /|/' | sed 's/http.*=//' > $tempfile
+sed 's/|/-/' $input | sed 's/Steam//' | sed 's/  /|/' | sed 's/http.*=//' > $tempfile
 python3 $DIR/parse.py $tempfile $output
 #rm $tempfile

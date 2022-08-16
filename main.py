@@ -40,7 +40,7 @@ def main(filename):
     print(output_mods.strip())
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Parse modlists")
+    parser = argparse.ArgumentParser(description="Parse modlists from HTML")
     parser.add_argument('file', help="HTML file")
 
     args = parser.parse_args()

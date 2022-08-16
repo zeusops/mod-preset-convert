@@ -25,7 +25,12 @@ def main(filename):
                      for x in
                      mod.select('[data-type="DisplayName"], '
                                 '[data-type="Link"]')]
-        name = name.replace('\'', '').replace('-', '').replace('  ', ' ')
+        name = (name
+                .replace(':', '')
+                .replace('\'', '')
+                .replace('-', '')
+                .replace('  ', ' ')
+               )
         mod_id = re.match(regex_id, url).group(1)
         match = re.findall(regex_modline.format(mod_id), allmods, re.MULTILINE)
 
